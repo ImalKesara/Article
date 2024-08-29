@@ -5,6 +5,10 @@
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 </script>
 
+<svelte:head>
+	<title>Create</title>
+</svelte:head>
+
 <div class="m-auto mt-5 grid max-w-5xl grid-cols-1 px-3">
 	<form class="grid gap-y-3" method="POST" action="?/createArticle" use:enhance>
 		<h3>New article</h3>

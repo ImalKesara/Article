@@ -8,12 +8,16 @@
 	console.log(articles);
 </script>
 
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
+
 <div class="mx-auto mt-5 w-full max-w-6xl px-3">
 	<h1 class=" text-xl font-bold">My blogs</h1>
 	<ScrollArea class="h-[40rem] max-w-6xl  rounded-md">
 		<div class="">
 			{#each articles as article}
-				<div class="my-5 border-2 rounded-lg p-3">
+				<div class="my-5 rounded-lg border-2 p-3">
 					<article>
 						<div class="flex justify-end">
 							<button>Delete</button>
