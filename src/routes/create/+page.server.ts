@@ -1,13 +1,6 @@
 import { fail } from '@sveltejs/kit';
-import type { Actions, PageServerLoad } from './$types';
+import type { Actions } from './$types';
 import { prisma } from '$lib/server/prisma';
-
-
-export const load: PageServerLoad = async () => {
-	return {
-		articles: await prisma.article.findMany(),
-	}
-}
 
 export const actions: Actions = {
 	createArticle: async ({ request }) => {

@@ -13,9 +13,9 @@
 	<form class="grid gap-y-3" method="POST" action="?/createArticle" use:enhance>
 		<h3>New article</h3>
 		<label for="title">Title</label>
-		<Input type="text" placeholder="Title" class="max-w-xs" name="title" />
+		<Input type="text" placeholder="Title" class="max-w-xs" name="title" required />
 		<label for="content">Content</label>
-		<Textarea placeholder="Type your message here." name="content" />
+		<Textarea placeholder="Type your message here." name="content"  required/>
 		<Button type="submit">Submit</Button>
 	</form>
 </div>
