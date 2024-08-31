@@ -5,6 +5,6 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 </script>
 
-<div class="mx-auto m-3 py-3 grid w-full max-w-6xl items-center  text-center border-t-2">
-	<div>Sveltekit FullStack Application ❤️</div>
+<div class="m-3 mx-auto grid w-full max-w-6xl items-center border-t-2 py-3 text-center">
+	<div>FullStack Application by @Imal_Kesara ❤️</div>
 </div>

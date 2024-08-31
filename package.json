@@ -35,9 +35,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@lucia-auth/adapter-prisma": "^4.0.1",
+		"@lucia-auth/sveltekit": "^0.6.11",
 		"@prisma/client": "^5.19.0",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
+		"lucia-auth": "^1.8.0",
 		"lucide": "^0.433.0",
 		"lucide-svelte": "^0.436.0",
 		"mode-watcher": "^0.4.1",

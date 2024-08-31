@@ -4,6 +4,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { OctagonX } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
+	import { Button } from '$lib/components/ui/button';
 
 	const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`);
 	export let data: PageData;
@@ -16,7 +17,13 @@
 </svelte:head>
 
 <div class="mx-auto mt-5 w-full max-w-6xl px-3">
-	<h1 class=" text-xl font-bold">My blogs</h1>
+	<div class="flex items-center justify-between">
+		<h1 class=" text-xl font-bold">My blogs</h1>
+		<a href="./create">
+			<Button class="border-2 " variant="default">+Create</Button>
+		</a>
+	</div>
+
 	<ScrollArea class="h-[40rem] max-w-6xl rounded-md">
 		<div class="">
 			{#each articles as article}
@@ -43,9 +50,11 @@
 								{article.content}
 							</p>
 						</div>
-
 						<p class="text-end text-sm">
 							{new Date(article.createdAt).toLocaleDateString()}
+						</p>
+						<p class="text-end text-sm">
+							{new Date(article.createdAt).toLocaleTimeString()}
 						</p>
 					</article>
 				</div>

@@ -19,10 +19,45 @@ datasource db {
 //   password String
 // }
 
- model Article{
-  id Int @id @default(autoincrement())
-  title String
-  content String
+model Article {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- }
+}
+
+model User {
+  id       String    @id @unique
+  sessions Session[]
+  key      Key[]
+
+  @@map("user")
+}
+
+model Session {
+  id             String @id @unique
+  userId         String
+  active_expires BigInt
+  idle_expires   BigInt
+  // expiresAt DateTime
+  user           User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+  Key            Key[]
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Key {
+  id              String   @id @unique
+  hashed_password Session? @relation(fields: [sessionId], references: [id])
+  user_id         String
+  primary         Boolean
+
+  user      User?   @relation(references: [id], fields: [userId], onDelete: Cascade)
+  userId    String?
+  sessionId String?
+
+  @@index([user_id])
+  @@map("key")
+}

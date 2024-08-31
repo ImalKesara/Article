@@ -6,15 +6,13 @@
 </script>
 
 <div class="mx-auto grid w-full max-w-6xl grid-cols-2 items-center p-3">
-	<div class="flex gap-x-3">
+	<div class="flex items-center gap-x-3">
 		<a href="/"><p>Blog</p></a>
-		<p>Draft</p>
 	</div>
 	<div class="flex justify-end gap-x-3">
-		<Button class="border-2 " variant="outline">Signup</Button>
-		<a href="./create">
-			<Button class="border-2 " variant="outline">+Create</Button>
-		</a>
+		<Button class="border-2 " variant="outline">Register</Button>
+		<Button class="border-2 " variant="outline">Login</Button>
+
 		<Button on:click={toggleMode} variant="outline" size="icon">
 			<Sun
 				class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
